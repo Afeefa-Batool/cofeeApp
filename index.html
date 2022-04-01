@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="text-center display-3">my cofee shop</h1>
+        <hr>
+        <table class="table table-bordered  table-striped ">
+
+            <tr>
+
+                <th> cofee brands</th>
+                <th>prices</th>
+                <th>quality</th>
+            </tr>
+            <tr>
+
+                <td>cofee1</td>
+                <td>200rs</td>
+                <td><input type="number" autofocus id="q1" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>cofee2</td>
+                <td>300rs</td>
+                <td><input type="number" id="q2" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>cofee3</td>
+                <td>400rs</td>
+                <td><input type="number" id="q3" class="form-control"></td>
+            </tr>
+            <tr></tr>
+            <td>cofee4</td>
+            <td>500rs</td>
+            <td><input type="number" id="q4" class="form-control"></td>
+            <tr>
+                <td>cofee5</td>
+                <td>600rs</td>
+                <td><input type="number" id="q5" class="form-control"></td>
+            </tr>
+
+        </table>
+        <div class="row">
+            <div class="col-md-4">
+                <button onclick="result()" class="btn btn-outline-primary btn-block">place order now!</button>
+            </div>
+            <div class="col-md-7">
+                <div id="show"></div>
+            </div>
+        </div>
+        <div class="row">
+            <button class="btn btn-primary mt-3" data-toggle="modal" data-target="#myModal">
+                Order Now!
+            </button>
+            <button class="btn btn-danger ml-3 mt-3" onclick="clear()">clear your order</button>
+        </div>
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content ">
+                    <div class="modal-header bg-success text-white">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel"></h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <p style="font-size: 30px;">𝘛𝘩𝘢𝘯𝘬𝘴 𝘧𝘰𝘳 𝘰𝘳𝘥𝘦𝘳𝘪𝘯𝘨!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-info">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+
+        function result() {
+            //getting all the user input feilds
+
+            var qt1 = parseInt(document.getElementById("q1").value);
+            var qt2 = parseInt(document.getElementById("q2").value);
+            var qt3 = parseInt(document.getElementById("q3").value);
+            var qt4 = parseInt(document.getElementById("q4").value);
+            var qt5 = parseInt(document.getElementById("q5").value);
+
+
+            var res1 = qt1 * 200;
+            var res2 = qt2 * 300;
+            var res3 = qt3 * 400;
+            var res4 = qt4 * 500;
+            var res5 = qt5 * 600;
+
+            var sum = res1 + res2 + res3 + res4 + res5;
+            document.getElementById("show").innerHTML = "<div class='alert alert-success'> your total bill is: <b> Rs. " + sum + "</b></div>";
+        }
+        function clear() {
+            var empt = "its work";
+            var clear = document.getElementById("clear").innerHTML = "<div class='alert alert-success'> your total bill is now clear: <b> Rs. " + empt + "</b></div>";
+            console.log(clear, empt);
+            console.log("dfsdfaf");
+        }
+// put text of right side in the id that is present in its right side
+// innerhtml ka mtlb hy k ya html k kisi tag my ga kr lagy ga.....wahan
+// ga kr apna data dekhay ga
+
+// press cofirm oreder alert shows o the screen 
+// uss k ooper aik fuction lyna hy aur alert dekha dyna hy.
+// button lyna hy gis ko dabany hy sy alert aay k.........tanku for ordering 
+// when DOM is ready
+// $(document).ready(function () {
+
+// // Attach Button click event listener 
+// $("#myBtn").click(function(){
+
+//     // show Modal
+//     $('#myModal').modal('show');
+// });
+// });
+    </script>
+
+
+
+
+</body>
+
+</html>
